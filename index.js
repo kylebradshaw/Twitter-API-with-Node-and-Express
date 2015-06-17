@@ -1,5 +1,6 @@
 module.exports = require('./node_modules/twitter-js-client/lib/Twitter');
 
+var config = require('./config.json');
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -11,12 +12,12 @@ var success = function (data) {
     console.log('Data [%s]', data);
 };
 
-var config = {
-    "consumerKey": "b7zg7k8fcPvK27sHIOYOwMSqG",
-    "consumerSecret": "orhgMLC0DVxkkELhAYaMw14685FWWmYzhrzxrKtAtT6nlaI9M8",
-    "accessToken": "855355436-Q4bbLZflQuoHP3I5PtQjtXrMDaSQ0WXnM5DXa3TG",
-    "accessTokenSecret": "cYFg5epLwcmDnBzLqImEt45Wg60qUDaZUc6nxDgXz6s3P"
-};
+// var config = {
+//     "consumerKey": "S1hmoF1DBgMn57zlNtqLu2T7D",
+//     "consumerSecret": "kyu5M4lW89dAhZtvxy8g3AhQvgDBZmkgUKwthP0klQUenC54ih",
+//     "accessToken": "11866-BuBFmfS1RYfAazyQahRq7TUbdE9s4qauQJGFf6rveEla",
+//     "accessTokenSecret": "VWRg02KYWg0So1wlWHaMafm1kHjBopzdKnFMpSEnbTraS"
+// };
 
 var twitter = new module.exports.Twitter(config);
 
