@@ -47,8 +47,20 @@ app.post('/twitter/user', function (req, res) {
 			}
 		});
 	});
+})
+.get('/twitter/trends', function (req, res) {
+  var data = twitter.getCustomApiCall('/trends/place.json',{ id: '1'}, function(error, response, body){
+    res.status(404).send({
+      "error" : "Bad Trend Url"
+    });
+  }, function(data){
+    res.send({
+      result : {
+        "trendData" : data
+      }
+    });
+  });
 });
-
 
 var server = app.listen(3000, function () {
   	var host = server.address().address;

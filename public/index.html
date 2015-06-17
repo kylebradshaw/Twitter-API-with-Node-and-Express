@@ -43,6 +43,26 @@
           </table>
         </div>
       </div>
+      <div class="row">
+        <div class="col-xs-12" ng-if="trends">
+          <table class="table table-bordered">
+            <tr ng-repeat="(key, value) in trends[0].trends">
+              <td>
+                {{key}}
+              </td>
+              <td>
+                {{value}}
+              </td>
+            </tr>
+          </table>
+        </div>
+        <div class="col-xs-12">
+          <p class="text-center">
+            <button class="btn btn-primary" ng-click="getTrends()">Get Trends</button>
+          </p>
+        </div>
+      </div>
+
     </div>
 
     <script src="//code.jquery.com/jquery-2.1.3.min.js"></script>
